@@ -44,5 +44,9 @@ axes[1].set_title('Time of Day vs Likes')
 axes[1].set_xlabel('Time of Day')
 axes[1].set_ylabel('Likes')
 
+# Set y-axis interval to 1 hour
+axes[0].yaxis.set_major_locator(ticker.MultipleLocator(base=1))
+axes[1].yaxis.set_major_locator(ticker.MultipleLocator(base=1))
+
 plt.tight_layout()
 plt.show()
