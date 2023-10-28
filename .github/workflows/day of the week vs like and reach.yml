@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming you have a DataFrame named 'df' with columns 'Time Posted', 'Reach', and 'Likes'
+
+# Convert 'Time Posted' column to datetime
+df['Time Posted'] = pd.to_datetime(df['Time Posted'])
+
+# Extract day of the week
+df['Day of Week'] = df['Time Posted'].dt.day_name()
+
+# Plotting Day of Week versus Reach and Likes
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 4))
+
+# Plot for Reach
+axes[0].bar(df['Day of Week'], df['Reach'])
+axes[0].set_title('Day of Week vs Reach')
+axes[0].set_xlabel('Day of Week')
+axes[0].set_ylabel('Reach')
+
+# Plot for Likes
+axes[1].bar(df['Day of Week'], df['Likes'])
+axes[1].set_title('Day of Week vs Likes')
+axes[1].set_xlabel('Day of Week')
+axes[1].set_ylabel('Likes')
+
+plt.tight_layout()
+plt.show()
