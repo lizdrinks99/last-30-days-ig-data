@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-
 # Assuming you have a DataFrame named 'df' with columns 'Time Posted', 'Reach', and 'Likes'
 
 # Convert 'Time Posted' column to datetime
